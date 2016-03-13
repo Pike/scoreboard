@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'scoreboard.framework',
+    'mqm_base',
 )
 
 MIDDLEWARE_CLASSES = (
