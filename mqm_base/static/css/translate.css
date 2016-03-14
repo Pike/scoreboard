@@ -889,9 +889,10 @@ body > header aside p {
 #source-pane {
   background: #3F4752;
   border-bottom: 1px solid #5E6475;
+  max-height: 50%;
   /*height: 20%;*/
   /*min-height: 100px;*/
-  /*overflow: auto;*/
+  overflow: auto;
   padding: 10px;
 
   -moz-box-sizing: border-box;
