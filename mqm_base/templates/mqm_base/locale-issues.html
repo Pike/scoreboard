@@ -1,0 +1,52 @@
+{% extends "framework/base.html" %}
+
+{% block title %}{{ locale.name }} Scoreboard{% endblock %}
+{% block extend_css %}
+<link rel="stylesheet" href="/static/css/translate.css" type="text/css" />
+{% endblock %}
+{% block extend_js %}
+<script type="text/javascript" src="/static/js/issues.js"></script>
+{% endblock %}
+
+{% block content %}
+<aside id="sidebar" class="advanced" style="width:100%">
+  <!-- Strings placeholder -->
+  <div id="entitylist">
+    <div class="wrapper">
+      <ul class="uneditables">
+        {% for issue in issues %}
+        <li class="entity translated"
+            data-original="{{ issue.original }}"
+            data-before="{{ issue.before }}"
+            data-after="{{ issue.after }}"
+            data-file="{{ issue.file }}"
+            data-identifier="{{ issue.identifier }}"
+            >
+          <p class="string-wrapper">
+            <span class='translation-string' dir='auto' lang="{{locale.code}}">{{ issue.before}}</span>
+            <span class='source-string' dir='auto' lang="{{locale.code}}">{{ issue.after}}</span>
+          </p>
+          <span class="arrow fa fa-chevron-right fa-lg"></span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <!-- evaluator -->
+  <div id="editor" class='opened'>
+    <div id="drag-1" draggable="true"></div>
+    <div id="source-pane">
+      <p>en-US:</p>
+      <p id="original"></p>
+      <p id="metadata"></p>
+      <p>Before:</p>
+      <textarea id="before" rows="1" readonly="true"></textarea>
+      <p>After:</p>
+      <textarea id="after" rows="1" readonly="true"></textarea>
+    </div>
+    <div id="scorecard">
+      <p>Scorecard goes here</p>
+    </div>
+  </div>
+</aside>
+{% endblock %}
