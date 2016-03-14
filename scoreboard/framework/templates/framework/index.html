@@ -7,5 +7,26 @@
 
 <div class="container">
     <p>We're testing MQM scorecards on various known issues here.</p>
+    <div class="project select">
+  <div class="menu">
+    <div class="search-wrapper clearfix">
+      <div class="icon fa fa-search"></div>
+      <input type="search" autocomplete="off" autofocus>
+    </div>
+    <div class="sort clearfix">
+      <span class="name asc">Name<i class="fa"></i></span>
+      <span class="name code">Code<i class="fa"></i></span>
+      <span class="name issues_count">Issues<i class="fa"></i></span>
+    </div>
+    <ul>
+    {% for locale in locales %}
+        <li class="clearfix" style="display: list-item;">
+          <span class="name"><a href="{% url 'locale_issues' locale.code %}">{{ locale.name }}</a></span>
+          <span class="name">{{ locale.code }}</span>
+          <span class="name">{{ locale.issues_count }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
 </div>
 {% endblock %}

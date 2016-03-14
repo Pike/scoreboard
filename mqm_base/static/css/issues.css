@@ -1,0 +1,76 @@
+body {
+  --header-height: 40px;
+}
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: var(--header-height);
+}
+.items {
+    flex: 1;
+    overflow: scroll;
+}
+.items ul {
+    list-style: none;
+    background: #EBEBEB;
+    margin: 0;
+}
+.items ul li {
+    background: #3f4752;
+    color: #FFFFFF;
+    cursor: pointer;
+    line-height: 2em;
+    text-align: left;
+    padding: 10px 25px 10px 43px;
+    vertical-align: top;
+}
+.items ul li span {
+    display: inline-block;
+    width: 40%;
+    text-align: start;
+}
+.items ul li .arrow {
+    display: none;
+    float: right;
+    color: #ccc;
+    width: 20px;
+}
+.items ul li:hover .arrow,
+.items ul li.hovered .arrow {
+    display: block;
+}
+.items ul li:hover,
+.items ul li.hovered {
+  background-color: #4d5967;
+}
+.scoreside {
+    background: #3f4752;
+    border-left: 1px solid #5e6475;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.issue-details {
+    flex: 1;
+    overflow: scroll;
+    text-align: left;
+    padding-left: 1em;
+    padding-top: 5px;
+}
+#before, #after {
+    background-color: white;
+    color: #444;
+    padding: 5px;
+    margin-left: 5px;
+    text-align: start;
+}
+.scorecard {
+    flex: 2;
+    overflow: scroll;
+}

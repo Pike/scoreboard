@@ -228,40 +228,40 @@ input[type=search] {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/OpenSans-Regular.eot');
-  src: url('./fonts/OpenSans-Regular.eot') format('embedded-opentype'),
-    url('./fonts/OpenSans-Regular.woff') format('woff'),
-    url('./fonts/OpenSans-Regular.ttf') format('truetype');
+  src: url('../fonts/OpenSans-Regular.eot');
+  src: url('../fonts/OpenSans-Regular.eot') format('embedded-opentype'),
+    url('../fonts/OpenSans-Regular.woff') format('woff'),
+    url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  src: url('./fonts/OpenSans-Light.eot');
-  src: url('./fonts/OpenSans-Light.eot') format('embedded-opentype'),
-    url('./fonts/OpenSans-Light.woff') format('woff'),
-    url('./fonts/OpenSans-Light.ttf') format('truetype');
+  src: url('../fonts/OpenSans-Light.eot');
+  src: url('../fonts/OpenSans-Light.eot') format('embedded-opentype'),
+    url('../fonts/OpenSans-Light.woff') format('woff'),
+    url('../fonts/OpenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  src: url('./fonts/OpenSans-Bold.eot');
-  src: url('./fonts/OpenSans-Bold.eot') format('embedded-opentype'),
-    url('./fonts/OpenSans-Bold.woff') format('woff'),
-    url('./fonts/OpenSans-Bold.ttf') format('truetype');
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: url('../fonts/OpenSans-Bold.eot') format('embedded-opentype'),
+    url('../fonts/OpenSans-Bold.woff') format('woff'),
+    url('../fonts/OpenSans-Bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
-  src: url('./fonts/OpenSans-Italic.eot');
-  src: url('./fonts/OpenSans-Italic.eot') format('embedded-opentype'),
-    url('./fonts/OpenSans-Italic.woff') format('woff'),
-    url('./fonts/OpenSans-Italic.ttf') format('truetype');
+  src: url('../fonts/OpenSans-Italic.eot');
+  src: url('../fonts/OpenSans-Italic.eot') format('embedded-opentype'),
+    url('../fonts/OpenSans-Italic.woff') format('woff'),
+    url('../fonts/OpenSans-Italic.ttf') format('truetype');
 }
 
 body, select, input, textarea, button {
@@ -1185,6 +1185,28 @@ body > .container {
 
 #helpers > section.machinery ul li > header sup {
   color: #7BC876;
+}
+
+#helpers > section.machinery ul li > header .sources  {
+  display: inline-block;
+}
+
+#helpers > section.machinery ul li > header .sources li:before {
+  content: "•";
+  padding-right: 3px;
+}
+
+#helpers > section.machinery ul li > header .sources li[data-source='Machine Translation']:before {
+  content: "";
+  padding-right: 0;
+}
+
+#helpers > section.machinery ul li > header .sources li {
+  border: none;
+  display: inline-block;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0 0 0 3px;
 }
 
 #helpers > section ul li > p {

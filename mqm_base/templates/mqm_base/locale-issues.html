@@ -1,0 +1,53 @@
+{% extends "framework/base.html" %}
+
+{% block title %}{{ locale.name }} Scoreboard{% endblock %}
+{% block extend_css %}
+<link rel="stylesheet" href="/static/css/issues.css" type="text/css" />
+{% if scorecard.css %}
+<link rel="stylesheet" href="{{ scorecard.css }}" type="text/css" />
+{% endif %}
+{% endblock %}
+{% block extend_js %}
+<script type="text/javascript" src="{% url 'issues.js' %}"></script>
+<script type="text/javascript" src="/static/js/issues.js"></script>
+{% if scorecard.js %}
+<script type="text/javascript" src="{{ scorecard.js }}"></script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="scoreboard">
+  <!-- Strings placeholder -->
+  <div class="items">
+    <ul class="">
+      {% for issue in issues %}
+      <li class="entity"
+          data-original="{{ issue.original }}"
+          data-before="{{ issue.before }}"
+          data-after="{{ issue.after }}"
+          data-file="{{ issue.file }}"
+          data-identifier="{{ issue.identifier }}"
+          >
+          <span class='before' dir='auto' lang="{{locale.code}}">{{ issue.before}}</span>
+          <span class='after' dir='auto' lang="{{locale.code}}">{{ issue.after}}</span>
+        <span class="arrow fa fa-chevron-right fa-lg"></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <!-- evaluator -->
+  <div class="scoreside">
+    <!--<div id="drag-1" draggable="true"></div>-->
+    <div class="issue-details">
+      <p>en-US:</p>
+      <p id="original"></p>
+      <p id="metadata"></p>
+      <p>Before:</p>
+      <div id="before" lang="{{ locale.code }}" dir="auto"></div>
+      <p>After:</p>
+      <div id="after" lang="{{ locale.code }}" dir="auto"></div>
+    </div>
+      {% include scorecard.template %}
+  </div>
+</div>
+{% endblock %}

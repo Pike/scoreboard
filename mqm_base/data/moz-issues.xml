@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<issues>
+<issue id="accuracy" core="yes"></issue>
+<issue id="no-translate" core="yes"></issue>
+<issue applies_to="source target" id="good" name="OK / Not a bug" core="yes">
+  <definition>The tested string is OK as is.</definition>
+  <notes>
+    <note>For error reports, this is the same as WONTFIX.</note>
+  </notes>
+</issue>
+</issues>
