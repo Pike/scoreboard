@@ -3,9 +3,16 @@
 {% block title %}{{ locale.name }} Scoreboard{% endblock %}
 {% block extend_css %}
 <link rel="stylesheet" href="/static/css/translate.css" type="text/css" />
+{% if scorecard.css %}
+<link rel="stylesheet" href="{{ scorecard.css }}" type="text/css" />
+{% endif %}
 {% endblock %}
 {% block extend_js %}
+<script type="text/javascript" src="{% url 'issues.js' %}"></script>
 <script type="text/javascript" src="/static/js/issues.js"></script>
+{% if scorecard.js %}
+<script type="text/javascript" src="{{ scorecard.js }}"></script>
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -45,7 +52,7 @@
       <textarea id="after" rows="1" readonly="true"></textarea>
     </div>
     <div id="scorecard">
-      <p>Scorecard goes here</p>
+      {% include scorecard.template %}
     </div>
   </div>
 </aside>

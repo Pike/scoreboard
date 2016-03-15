@@ -1,3 +1,4 @@
+/* global scorecard */
 $("#entitylist .entity").click(function () {
     switchToEntity(this);
 });
@@ -8,6 +9,9 @@ function switchToEntity(listitem) {
     $("#original").text(listitem.dataset.original);
     rows($("#before").text(listitem.dataset.before));
     rows($("#after").text(listitem.dataset.after));
+    if (scorecard) {
+        scorecard.reset(listitem.dataset);
+    }
 }
 function rows(textarea) {
     textarea = textarea[0];  // de-jQuery
@@ -16,3 +20,7 @@ function rows(textarea) {
         textarea.rows++;
     }
 }
+
+$(document).ready(function() {
+    switchToEntity(document.querySelector("#entitylist .entity"));
+});
