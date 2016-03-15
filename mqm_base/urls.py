@@ -8,5 +8,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^mqm_base/issues.js$', views.issues_js, name='issues.js'),
-    url(r'^([a-zA-Z\-]+)$', views.locale_issues),
+    url(r'^([a-zA-Z\-]+)$', views.locale_issues, name='locale_issues'),
 ]

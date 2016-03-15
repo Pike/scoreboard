@@ -21,7 +21,7 @@
     <ul>
     {% for locale in locales %}
         <li class="clearfix" style="display: list-item;">
-          <span class="name">{{ locale.name }}</span>
+          <span class="name"><a href="{% url 'locale_issues' locale.code %}">{{ locale.name }}</a></span>
           <span class="name">{{ locale.code }}</span>
           <span class="name">{{ locale.issues_count }}</span>
         </li>
