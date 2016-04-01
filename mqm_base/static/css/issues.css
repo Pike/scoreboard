@@ -70,6 +70,12 @@ body {
     margin-left: 5px;
     text-align: start;
 }
+.issue-details .modified {
+    text-decoration: underline;
+}
+.issue-details .unchanged {
+    color: #999;
+}
 .scorecard {
     flex: 2;
     overflow: scroll;

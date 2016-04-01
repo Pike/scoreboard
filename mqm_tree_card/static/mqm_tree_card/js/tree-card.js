@@ -1,10 +1,9 @@
-/* global issues */
+/* global $, issues */
 var scorecard = {
     current: null,
     reset: function(ctx) {
         this.select(issues.getElementById('good'));
-        $("#tree-card-breadcrumbs > .save").one("click", function() {
-        });
+        $(".current > .save").one("click", scorecard.save);
     },
     select: function(issue) {
         this.current = issue;

@@ -9,6 +9,7 @@
 {% endblock %}
 {% block extend_js %}
 <script type="text/javascript" src="{% url 'issues.js' %}"></script>
+<script type="text/javascript" src="/static/js/diff-match-patch/diff_match_patch.js"></script>
 <script type="text/javascript" src="/static/js/issues.js"></script>
 {% if scorecard.js %}
 <script type="text/javascript" src="{{ scorecard.js }}"></script>
